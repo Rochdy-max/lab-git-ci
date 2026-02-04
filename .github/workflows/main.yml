@@ -36,14 +36,6 @@ jobs:
           name: my-app-1.0
           path: target/*
 
-  build_docker_image:
-    name: Build a deployable package (Docker image)
-    runs-on: ubuntu-latest
-    steps:
-      # Récupère le contenu du répertoire
-      - name: Checkout
-        uses: actions/checkout@v4
-
       # Installe la commande docker sur l'agent
       - name: Install Docker
         uses: docker/setup-buildx-action@v1
