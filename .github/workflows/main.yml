@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build_and_test:
-    name: Build project and publish results
+    name: Build project, publish unit test results and the built artifact
     runs-on: ubuntu-latest
     steps:
       # Installe java 8 sur l'agent
@@ -24,3 +24,10 @@ jobs:
         if: always()
         with:
           files: target/**/*.xml
+
+      # Publie les fichiers présents dans le dossier target dans un build artifact
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: my-app-1.0
+          path: target/*
