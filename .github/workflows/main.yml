@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     name: Build project
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       # Installe java 8 sur l'agent
       - name: Set up JDK 8
